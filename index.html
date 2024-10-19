@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Emission Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Carbon Emission Calculator</h1>
+        <form id="emissionForm">
+            <label for="vehicleType">Vehicle Type:</label>
+            <select id="vehicleType" name="vehicleType" required onchange="updateFuelOptions()">
+                <option value="2W">Two - wheeler</option>
+                <option value="3W">Three - wheeler</option>
+                <option value="4W">Four - wheeler</option>
+            </select>
+            <label for="fuelType">Fuel Type:</label>
+            <select id="fuelType" name="fuelType" required>
+                <!-- Options will be dynamically added by JavaScript -->
+            </select>
+            <label for="distance">Average Distance Travel per Day (in KM):</label>
+            <input type="number" id="distance" name="distance" required>
+            <label for="mileage">Mileage (KM/L):</label>
+            <input type="number" id="mileage" name="mileage" required>
+            <button type="button" onclick="calculateEmission()">Calculate Emission</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
