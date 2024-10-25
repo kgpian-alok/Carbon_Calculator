@@ -39,7 +39,7 @@ function calculateEmission() {
     const distance = parseFloat(document.getElementById('distance').value);
     const mileage = parseFloat(document.getElementById('mileage').value);
     const resultDiv = document.getElementById('result');
-    
+
     if (!distance && !mileage) {
         alert("All fields are mandatory.");
         return;
@@ -57,7 +57,7 @@ function calculateEmission() {
 
     const distanceFloat = parseFloat(distance);
     const mileageFloat = parseFloat(mileage);
-    
+
     const emissionFactors = {
         diesel: 2.78,
         gasoline: 2.3,
@@ -70,9 +70,9 @@ function calculateEmission() {
     const emissionsPerYear = emissionsPerDay * 365;
 
     resultDiv.classList.remove("hidden");
-    
+
     document.getElementById('result').innerHTML = `
-        <p>Daily CO<sub>2</sub> Emissions: ${emissionsPerDay.toFixed(3)} kg</p>
-        <p>Yearly CO<sub>2</sub> Emissions: ${emissionsPerYear.toFixed(3)} kg</p>
+        <p>Daily CO<sub>2</sub> Emissions: ${emissionsPerDay.toFixed(3)} kg/day</p>
+        <p>Yearly CO<sub>2</sub> Emissions: ${emissionsPerYear.toFixed(3)} kg/year</p>
     `;
 }
