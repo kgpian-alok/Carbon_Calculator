@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carbon Emission Calculator</title>
+    <link rel="shortcut icon" href="./IIT_Kharagpur_Logo.svg.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,15 +21,20 @@
             <select id="fuelType" name="fuelType" required>
                 <!-- Options will be dynamically added by JavaScript -->
             </select>
-            <label for="distance">Average Distance Travel per Day (in KM):</label>
+            <label for="distance">Average Distance Travel per Day (in KM/day):</label>
             <input type="number" id="distance" name="distance" required>
-            <label for="mileage">Mileage (KM/L):</label>
+            <label for="mileage">Mileage of your vehicle (KM/L):</label>
             <input type="number" id="mileage" name="mileage" required>
             <button type="button" onclick="calculateEmission()">Calculate Emission</button>
         </form>
-        <div id="result"></div>
+        <div id="result" class="hidden"></div>
     </div>
+    <footer id="footer">
+        <div class="footer-content">
+            <p>© <span id="currentYear"></span> | Carbon Emission Calculator. All rights reserved.</p>
+            <p>ALOK KUMAR (21CE36014) under supervision Dr. SUDHA GOEL</p>
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
-
 </html>
