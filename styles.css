@@ -1,6 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-image: url('./factory-producing-co2-pollution.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0;
     padding: 0;
 }
@@ -8,15 +18,19 @@ body {
 .container {
     width: 50%;
     margin: 100px auto;
-    background: white;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 8px;
+    background: transparent;
+    border: 3px solid rgba(25,255,255,0.4);
+    padding: 20px 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    /* backdrop-filter: blur(5px); */
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    color: white;
+    margin-bottom: 40px;
+    font-size: 24px;
 }
 
 form {
@@ -26,7 +40,8 @@ form {
 
 label {
     margin: 10px 0 5px;
-    color: #555;
+    color: white;
+    font-size: 16px;
 }
 
 input, select {
@@ -34,23 +49,69 @@ input, select {
     margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+input:focus,
+select:focus {
+    border-color: #28a745;
+    outline: none;
 }
 
 button {
-    padding: 10px;
+    padding: 12px;
     background-color: #28a745;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background-color .5s ease;
 }
 
 button:hover {
     background-color: #218838;
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
 }
 
 #result {
     margin-top: 20px;
     font-size: 1.2em;
     color: #333;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+p {
+    margin: 5px 0;
+}
+
+#footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    font-size: 15px;
+}
+
+#footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    text-decoration: underline;
 }
