@@ -1,3 +1,5 @@
+document.getElementById("currentYear").textContent = new Date().getFullYear();
+
 document.addEventListener('DOMContentLoaded', (event) => {
     updateFuelOptions();
 });
@@ -36,22 +38,41 @@ function calculateEmission() {
     const fuelType = document.getElementById('fuelType').value;
     const distance = parseFloat(document.getElementById('distance').value);
     const mileage = parseFloat(document.getElementById('mileage').value);
+    const resultDiv = document.getElementById('result');
+    
+    if (!distance && !mileage) {
+        alert("All fields are mandatory.");
+        return;
+    }
 
-    // Constants for CO2 emissions
+    if (!distance) {
+        alert("Please enter average distance traveling per day");
+        return;
+    }
+
+    if (!mileage) {
+        alert("Please enter mileage of your vehicle");
+        return;
+    }
+
+    const distanceFloat = parseFloat(distance);
+    const mileageFloat = parseFloat(mileage);
+    
     const emissionFactors = {
         diesel: 2.78,
-        gasoline: 2.3
+        gasoline: 2.3,
+        cng: 1.8
     };
 
-    // Calculate the emissions
     const emissionFactor = emissionFactors[fuelType];
-    const litersConsumedPerDay = distance / mileage;
+    const litersConsumedPerDay = distanceFloat / mileageFloat;
     const emissionsPerDay = litersConsumedPerDay * emissionFactor;
     const emissionsPerYear = emissionsPerDay * 365;
 
-    // Display the result
+    resultDiv.classList.remove("hidden");
+    
     document.getElementById('result').innerHTML = `
-        <p>Daily CO<sub>2</sub> Emissions: ${emissionsPerDay.toFixed(2)} kg</p>
-        <p>Yearly CO<sub>2</sub> Emissions: ${emissionsPerYear.toFixed(2)} kg</p>
+        <p>Daily CO<sub>2</sub> Emissions: ${emissionsPerDay.toFixed(3)} kg</p>
+        <p>Yearly CO<sub>2</sub> Emissions: ${emissionsPerYear.toFixed(3)} kg</p>
     `;
 }
