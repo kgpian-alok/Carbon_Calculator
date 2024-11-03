@@ -61,7 +61,7 @@ function calculateEmission() {
     const emissionFactors = {
         diesel: 2.78,
         gasoline: 2.3,
-        cng: 1.8
+        cng: 1.97
     };
 
     const emissionFactor = emissionFactors[fuelType];
